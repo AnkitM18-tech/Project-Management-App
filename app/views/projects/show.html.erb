@@ -1,12 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
+<h2 class="todo_list_title">
   <%= @project.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
+</h2>
+<p class="todo_list_sub_title">
   <%= @project.description %>
 </p>
 
@@ -17,5 +14,8 @@
   </div>
 </div>
 
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+<div class="links">
+  <%= link_to 'Edit', edit_project_path(@project) %> |
+  <%= link_to 'Back', projects_path %> |
+  <%= link_to 'Delete', project_path(@project), method: :delete, data: { confirm: "Are you sure?" } %>
+</div>
